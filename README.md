@@ -11,7 +11,7 @@ I fully followed [Ravi Tamada's tutorial and source codes](http://www.androidhiv
 
 ## Instructions
 - You have to modify config.php file with your own Firebase Server Key. This key you'll get from Firebase official website.
-- You have to add your own *google-service.json* file from your Firebase console. Otherwise the project don't run properly.
+- You have to add your own *google-services.json* file from your Firebase console. Otherwise the project don't run properly.
 
 ### Quick Links:
 - [Android Java Code](https://github.com/hasancse91/Android-Firebase-Notification/tree/master/Android-Firebase-Notification-SourceCode/app/src/main/java/com/hellohasan/android_firebase_notification)
