@@ -1,7 +1,7 @@
 # Android Firebase Push Notification with PHP Backend
 
 This is a practice project of Android Firebase push notification with PHP backend.
-I fully followed [Ravi Tamada's tutorial and source codes](http://www.androidhive.info/2012/10/android-push-notifications-using-google-cloud-messaging-gcm-php-and-mysql/).
+I followed [Ravi Tamada's tutorial and source codes](http://www.androidhive.info/2012/10/android-push-notifications-using-google-cloud-messaging-gcm-php-and-mysql/) to develop this project.
 
 **Web admin panel Screenshot**<br>
 <img src="https://raw.githubusercontent.com/hasancse91/Android-Firebase-Notification/master/data/admin_panel.png" height="444" />
