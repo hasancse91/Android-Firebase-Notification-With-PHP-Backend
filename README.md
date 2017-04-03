@@ -10,8 +10,8 @@ I fully followed [Ravi Tamada's tutorial and source codes](http://www.androidhiv
 <img src="https://raw.githubusercontent.com/hasancse91/Android-Firebase-Notification/master/data/screen1.png" width="250" height="444" />        <img src="https://raw.githubusercontent.com/hasancse91/Android-Firebase-Notification/master/data/screen2.png" width="250" height="444" />
 
 ## Instructions
-- You have to modify config.php file with your own Firebase Server Key. This key you'll get from Firebase official website.
-- You have to add your own *google-services.json* file from your Firebase console. Otherwise the project don't run properly.
+- You have to modify ***config.php*** file with your own Firebase Server Key. This key you'll get from Firebase official website.
+- You have to add your own ***google-services.json*** file from your Firebase console. Otherwise the project don't run properly.
 
 ### Quick Links:
 - [Android Java Code](https://github.com/hasancse91/Android-Firebase-Notification/tree/master/Android-Firebase-Notification-SourceCode/app/src/main/java/com/hellohasan/android_firebase_notification)
