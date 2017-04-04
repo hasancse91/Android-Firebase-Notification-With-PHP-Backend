@@ -10,7 +10,6 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();
-
     @Override
     public void onTokenRefresh() {
         super.onTokenRefresh();
@@ -23,6 +22,5 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         registrationComplete.putExtra("token", refreshedToken);
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
     }
-
 
 }

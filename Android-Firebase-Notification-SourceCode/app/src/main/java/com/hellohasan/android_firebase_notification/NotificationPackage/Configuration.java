@@ -1,8 +1,5 @@
 package com.hellohasan.android_firebase_notification.NotificationPackage;
 
-/**
- * Created by hasan on 10/28/16.
- */
 
 public class Configuration {
 
