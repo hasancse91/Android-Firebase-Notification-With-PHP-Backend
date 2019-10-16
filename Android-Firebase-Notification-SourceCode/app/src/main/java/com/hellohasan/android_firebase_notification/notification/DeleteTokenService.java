@@ -1,4 +1,4 @@
-package com.hellohasan.android_firebase_notification.NotificationPackage;
+package com.hellohasan.android_firebase_notification.notification;
 
 import android.app.IntentService;
 import android.content.Intent;

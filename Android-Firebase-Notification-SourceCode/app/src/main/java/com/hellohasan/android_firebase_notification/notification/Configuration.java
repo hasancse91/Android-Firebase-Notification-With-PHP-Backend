@@ -1,4 +1,4 @@
-package com.hellohasan.android_firebase_notification.NotificationPackage;
+package com.hellohasan.android_firebase_notification.notification;
 
 
 public class Configuration {

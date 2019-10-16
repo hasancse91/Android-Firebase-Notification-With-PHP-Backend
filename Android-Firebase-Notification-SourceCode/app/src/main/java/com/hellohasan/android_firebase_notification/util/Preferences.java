@@ -1,4 +1,4 @@
-package com.hellohasan.android_firebase_notification.HelperClasses;
+package com.hellohasan.android_firebase_notification.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

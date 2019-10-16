@@ -1,13 +1,16 @@
-package com.hellohasan.android_firebase_notification.NotificationPackage;
+package com.hellohasan.android_firebase_notification.notification;
 
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.hellohasan.android_firebase_notification.Activity.MessageShowActivity;
+import com.hellohasan.android_firebase_notification.activity.MessageShowActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +20,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
     private NotificationUtils notificationUtils;
+
+    @Override
+    public void onNewToken(@NonNull String s) {
+        super.onNewToken(s);
+
+        Log.e("FCM Token", s);
+
+        // Notify UI that registration has completed, so the progress indicator can be hidden.
+//        Intent registrationComplete = new Intent(Configuration.REGISTRATION_COMPLETE);
+//        registrationComplete.putExtra("token", s);
+//        LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
+    }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
