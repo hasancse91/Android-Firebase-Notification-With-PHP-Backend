@@ -14,5 +14,5 @@ I followed [Ravi Tamada's tutorial and source codes](http://www.androidhive.info
 - You have to add your own ***google-services.json*** file from your Firebase console. Otherwise the project don't run properly.
 
 ### Quick Links:
-- [Android Java Code](https://github.com/hasancse91/Android-Firebase-Notification/tree/master/Android-Firebase-Notification-SourceCode/app/src/main/java/com/hellohasan/android_firebase_notification)
+- [Android Java Code](https://github.com/hasancse91/Android-Firebase-Notification-With-PHP-Backend/tree/master/AndroidFirebaseNotification)
 - [PHP Source Code](https://github.com/hasancse91/Android-Firebase-Notification/tree/master/AndroidPushNotification-PHP-Backend)
