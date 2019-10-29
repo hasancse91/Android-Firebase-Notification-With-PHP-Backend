@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "2466098",
-    "firebase_url": "https://android-firebase-notific-f1589.firebaseio.com",
-    "project_id": "android-firebase-notific-f1589",
-    "storage_bucket": "android-firebase-notific-f1589.appspot.com"
+    "project_number": "your project number",
+    "firebase_url": "Your firebase url",
+    "project_id": "your project ID",
+    "storage_bucket": "your_bucket"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:2464df098:android:638fe22dfdf3cd537dd",
+        "mobilesdk_app_id": "YOUR_APP_ID",
         "android_client_info": {
           "package_name": "com.hellohasan.android_firebase_notification"
         }
       },
       "oauth_client": [
         {
-          "client_id": "24df55310098-9kiqefelhe6a85ftg9cq106r1m49nbfd.apps.googleusercontent.com",
+          "client_id": "YOUR_CLIENT_ID",
           "client_type": 3
         }
       ],
@@ -28,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "2466546550098-9kiqefelhe6a85ftg9cq106r1m49nbfd.apps.googleusercontent.com",
+              "client_id": "YOUR_CLIENT_ID",
               "client_type": 3
             }
           ]
