@@ -43,14 +43,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     private fun handleDataMessage(json: JSONObject) {
         Log.e(TAG, "push json: $json")
 
-        println("Data Message: $json")
-
         try {
             val data = json.getJSONObject("data")
 
             val title = data.getString("title")
             val message = data.getString("message")
-            val isBackground = data.getBoolean("is_background")
             val imageUrl = data.getString("image")
             val timestamp = data.getString("timestamp")
             val payload = data.getJSONObject("payload")

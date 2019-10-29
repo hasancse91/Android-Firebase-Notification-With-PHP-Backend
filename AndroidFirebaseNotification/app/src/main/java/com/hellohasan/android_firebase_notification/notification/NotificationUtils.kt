@@ -1,9 +1,6 @@
 package com.hellohasan.android_firebase_notification.notification
 
-import android.app.ActivityManager
-import android.app.Notification
-import android.app.NotificationManager
-import android.app.PendingIntent
+import android.app.*
 import android.content.ComponentName
 import android.content.ContentResolver
 import android.content.Context
@@ -36,14 +33,16 @@ import com.hellohasan.android_firebase_notification.notification.Configuration.C
 
 class NotificationUtils(private val mContext: Context) {
 
+    private val channelId = mContext.getString(R.string.default_notification_channel_id)
+
     @JvmOverloads
     fun showNotificationMessage(
         title: String,
         message: String,
         timeStamp: String,
         intent: Intent,
-        imageUrl: String? = null
-    ) {
+        imageUrl: String? = null) {
+
         // Check for empty push message
         if (TextUtils.isEmpty(message))
             return
@@ -61,7 +60,8 @@ class NotificationUtils(private val mContext: Context) {
         )
 
         val mBuilder = NotificationCompat.Builder(
-            mContext
+            mContext,
+            channelId
         )
 
         val alarmSound = Uri.parse(
@@ -140,8 +140,16 @@ class NotificationUtils(private val mContext: Context) {
             .setContentText(message)
             .build()
 
-        val notificationManager =
-            mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelId,
+                "Firebase Notification channel for sample app",
+                NotificationManager.IMPORTANCE_DEFAULT)
+            notificationManager.createNotificationChannel(channel)
+        }
+
         notificationManager.notify(Configuration.NOTIFICATION_ID, notification)
     }
 
@@ -172,8 +180,14 @@ class NotificationUtils(private val mContext: Context) {
             .setContentText(message)
             .build()
 
-        val notificationManager =
-            mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelId, "Firebase Notification channel for sample app", NotificationManager.IMPORTANCE_DEFAULT)
+            notificationManager.createNotificationChannel(channel)
+        }
+
         notificationManager.notify(Configuration.NOTIFICATION_ID_BIG_IMAGE, notification)
     }
 
@@ -212,41 +226,6 @@ class NotificationUtils(private val mContext: Context) {
     }
 
     companion object {
-
-        /**
-         * Method checks if the app is in background or not
-         */
-        fun isAppIsInBackground(context: Context): Boolean {
-            var isInBackground = true
-            val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
-                val runningProcesses = am.runningAppProcesses
-                for (processInfo in runningProcesses) {
-                    if (processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                        for (activeProcess in processInfo.pkgList) {
-                            if (activeProcess == context.packageName) {
-                                isInBackground = false
-                            }
-                        }
-                    }
-                }
-            } else {
-                val taskInfo = am.getRunningTasks(1)
-                val componentInfo = taskInfo[0].topActivity
-                if (componentInfo.packageName == context.packageName) {
-                    isInBackground = false
-                }
-            }
-
-            return isInBackground
-        }
-
-        // Clears notification tray messages
-        fun clearNotifications(context: Context) {
-            val notificationManager =
-                context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.cancelAll()
-        }
 
         fun getTimeMilliSec(timeStamp: String): Long {
             val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
